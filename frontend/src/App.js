@@ -1,5 +1,29 @@
 import { useState, useEffect, createContext, useContext } from "react";
 import "./App.css"
+import product1 from "./assets/images/product1.jpeg";
+import product2 from "./assets/images/product2.jpeg";
+import product3 from "./assets/images/product3.jpeg";
+import product4 from "./assets/images/product4.jpeg";
+import product5 from "./assets/images/product5.jpeg";
+import product6 from "./assets/images/product6.jpeg";
+import product7 from "./assets/images/product7.jpeg";
+import product8 from "./assets/images/product8.jpeg";
+import product9 from "./assets/images/product9.jpeg";
+import product10 from "./assets/images/product10.jpeg";
+import product11 from "./assets/images/product11.jpeg";
+import product12 from "./assets/images/product12.jpeg";
+import product13 from "./assets/images/product13.jpeg";
+import product14 from "./assets/images/product14.jpeg";
+import product15 from "./assets/images/product15.jpeg";
+import product16 from "./assets/images/product16.jpeg";
+import product17 from "./assets/images/product17.jpeg";
+import product18 from "./assets/images/product18.jpeg";
+import product19 from "./assets/images/product19.jpeg";
+import product20 from "./assets/images/product20.jpeg";
+
+
+
+
 import { 
   Phone, 
   Mail, 
@@ -126,6 +150,7 @@ const categories = [
   { id: 2, name: "Adult Diapers", description: "Premium adult care", icon: Heart, color: "bg-purple-50" },
   { id: 3, name: "Hygiene Products", description: "Sanitary & period care", icon: Shield, color: "bg-pink-50" },
   { id: 4, name: "Baby Accessories", description: "Bottles, clothes & more", icon: Package, color: "bg-teal-50" },
+  { id: 5, name: "Baby Toys", description: "Safe & fun toys for childrens", icon: Heart,  color: "bg-yellow-50"}
 ];
 
 // All 20 Products with actual images
@@ -138,7 +163,7 @@ const allProducts = [
     originalPrice: 1199,
     discountPrice: 600,
     badge: "Best Seller",
-    image: "https://customer-assets.emergentagent.com/job_value-driven-shop/artifacts/zqukorhp_WhatsApp%20Image%202026-03-05%20at%2011.50.59%20AM.jpeg"
+    image: product1
   },
   {
     id: 2,
@@ -148,7 +173,7 @@ const allProducts = [
     originalPrice: 699,
     discountPrice: 600,
     badge: "Popular",
-    image: "https://customer-assets.emergentagent.com/job_value-driven-shop/artifacts/qiyu2aw3_WhatsApp%20Image%202026-03-05%20at%2011.51.00%20AM%20%281%29.jpeg"
+    image: product2
   },
   {
     id: 3,
@@ -158,7 +183,7 @@ const allProducts = [
     originalPrice: 699,
     discountPrice: 530,
     badge: "Value Deal",
-    image: "https://customer-assets.emergentagent.com/job_value-driven-shop/artifacts/ura4ogia_WhatsApp%20Image%202026-03-05%20at%2011.51.00%20AM%20%282%29.jpeg"
+    image: product3
   },
   {
     id: 4,
@@ -168,7 +193,7 @@ const allProducts = [
     originalPrice: 999,
     discountPrice: 650,
     badge: "Premium",
-    image: "https://customer-assets.emergentagent.com/job_value-driven-shop/artifacts/i97a7z4l_WhatsApp%20Image%202026-03-05%20at%2011.51.00%20AM.jpeg"
+    image: product4
   },
   {
     id: 5,
@@ -178,7 +203,7 @@ const allProducts = [
     originalPrice: 699,
     discountPrice: 550,
     badge: "Top Deal",
-    image: "https://customer-assets.emergentagent.com/job_value-driven-shop/artifacts/yihdv183_WhatsApp%20Image%202026-03-05%20at%2011.51.01%20AM%20%281%29.jpeg"
+    image: product5
   },
   {
     id: 6,
@@ -188,7 +213,7 @@ const allProducts = [
     originalPrice: 599,
     discountPrice: 399,
     badge: "Buy 2 Get 1",
-    image: "https://customer-assets.emergentagent.com/job_value-driven-shop/artifacts/03zxubj1_WhatsApp%20Image%202026-03-05%20at%2011.51.01%20AM%20%282%29.jpeg"
+    image: product6
   },
   {
     id: 7,
@@ -198,7 +223,7 @@ const allProducts = [
     originalPrice: 1199,
     discountPrice: 550,
     badge: "All Sizes",
-    image: "https://customer-assets.emergentagent.com/job_value-driven-shop/artifacts/3m7y7mgg_WhatsApp%20Image%202026-03-05%20at%2011.51.01%20AM.jpeg"
+    image: product7
   },
   {
     id: 8,
@@ -208,7 +233,7 @@ const allProducts = [
     originalPrice: 599,
     discountPrice: 509,
     badge: "10-15% OFF",
-    image: "https://customer-assets.emergentagent.com/job_value-driven-shop/artifacts/qexpp5pj_WhatsApp%20Image%202026-03-05%20at%2011.51.02%20AM%20%281%29.jpeg"
+    image: product8
   },
   {
     id: 9,
@@ -218,7 +243,7 @@ const allProducts = [
     originalPrice: 295,
     discountPrice: 180,
     badge: "Hot Deal",
-    image: "https://customer-assets.emergentagent.com/job_value-driven-shop/artifacts/wyqnz3fx_WhatsApp%20Image%202026-03-05%20at%2011.51.02%20AM%20%282%29.jpeg"
+    image: product9
   },
   {
     id: 10,
@@ -228,7 +253,7 @@ const allProducts = [
     originalPrice: 1199,
     discountPrice: 550,
     badge: "Best Value",
-    image: "https://customer-assets.emergentagent.com/job_value-driven-shop/artifacts/ri9xud3q_WhatsApp%20Image%202026-03-05%20at%2011.51.02%20AM.jpeg"
+    image: product10
   },
   {
     id: 11,
@@ -238,7 +263,7 @@ const allProducts = [
     originalPrice: 425,
     discountPrice: 290,
     badge: "Adult Care",
-    image: "https://customer-assets.emergentagent.com/job_value-driven-shop/artifacts/sfa02vkp_WhatsApp%20Image%202026-03-05%20at%2011.51.04%20AM%20%282%29.jpeg"
+    image: product11
   },
   {
     id: 12,
@@ -248,7 +273,7 @@ const allProducts = [
     originalPrice: 275,
     discountPrice: 180,
     badge: "5 Pack",
-    image: "https://customer-assets.emergentagent.com/job_value-driven-shop/artifacts/9etpc72t_WhatsApp%20Image%202026-03-05%20at%2011.51.04%20AM.jpeg"
+    image: product12
   },
   {
     id: 13,
@@ -258,7 +283,7 @@ const allProducts = [
     originalPrice: 849,
     discountPrice: 370,
     badge: "56% OFF",
-    image: "https://customer-assets.emergentagent.com/job_value-driven-shop/artifacts/4a5rx4vi_WhatsApp%20Image%202026-03-05%20at%2011.51.05%20AM%20%281%29.jpeg"
+    image: product13
   },
   {
     id: 14,
@@ -268,7 +293,7 @@ const allProducts = [
     originalPrice: 750,
     discountPrice: 380,
     badge: "49% OFF",
-    image: "https://customer-assets.emergentagent.com/job_value-driven-shop/artifacts/nafpj1mm_WhatsApp%20Image%202026-03-05%20at%2011.51.05%20AM%20%282%29.jpeg"
+    image: product14
   },
   {
     id: 15,
@@ -278,7 +303,7 @@ const allProducts = [
     originalPrice: 999,
     discountPrice: 350,
     badge: "65% OFF",
-    image: "https://customer-assets.emergentagent.com/job_value-driven-shop/artifacts/1e7cd178_WhatsApp%20Image%202026-03-05%20at%2011.51.05%20AM.jpeg"
+    image: product15
   },
   {
     id: 16,
@@ -288,7 +313,7 @@ const allProducts = [
     originalPrice: 750,
     discountPrice: 249,
     badge: "Buy 1 Get 2",
-    image: "https://customer-assets.emergentagent.com/job_value-driven-shop/artifacts/r9gmdt9a_WhatsApp%20Image%202026-03-05%20at%2011.51.03%20AM%20%281%29.jpeg"
+    image: product16
   },
   {
     id: 17,
@@ -298,7 +323,7 @@ const allProducts = [
     originalPrice: 1449,
     discountPrice: 880,
     badge: "No.1 Brand",
-    image: "https://customer-assets.emergentagent.com/job_value-driven-shop/artifacts/q3pad939_WhatsApp%20Image%202026-03-05%20at%2011.51.03%20AM%20%282%29.jpeg"
+    image: product17
   },
   {
     id: 18,
@@ -308,7 +333,7 @@ const allProducts = [
     originalPrice: 999,
     discountPrice: 580,
     badge: "All Sizes",
-    image: "https://customer-assets.emergentagent.com/job_value-driven-shop/artifacts/gebr46gx_WhatsApp%20Image%202026-03-05%20at%2011.51.03%20AM%20%283%29.jpeg"
+    image: product18
   },
   {
     id: 19,
@@ -318,7 +343,7 @@ const allProducts = [
     originalPrice: 450,
     discountPrice: 320,
     badge: "40 Pack",
-    image: "https://customer-assets.emergentagent.com/job_value-driven-shop/artifacts/9l6lptpk_WhatsApp%20Image%202026-03-05%20at%2011.51.03%20AM.jpeg"
+    image: product19
   },
   {
     id: 20,
@@ -328,7 +353,7 @@ const allProducts = [
     originalPrice: 999,
     discountPrice: 550,
     badge: "Night Care",
-    image: "https://customer-assets.emergentagent.com/job_value-driven-shop/artifacts/ya4mhb9d_WhatsApp%20Image%202026-03-05%20at%2011.51.04%20AM%20%281%29.jpeg"
+    image: product20
   }
 ];
 
